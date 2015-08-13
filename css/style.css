@@ -1,0 +1,100 @@
+/* 	---------
+	General CSS
+	--------- */
+
+body{
+	font-family: 'Open Sans Condensed', sans-serif,helvetica ;
+}
+
+div.note {
+	padding-top: 15px;
+	width:45%;
+	margin:0 auto;
+}
+
+header{
+	margin-bottom: 15px;
+	font-size: 3.1em;
+}
+
+article {
+	font-size: 26px;
+}
+
+*:focus {
+ outline: 0;
+}
+
+/* 	---------
+	Menu & Icons
+	--------- */
+
+#menu{
+	position: fixed;
+	top: 1em;
+	right:1em;
+	height: 500px;
+	width: 50px;
+}
+
+#github{
+	position: fixed;
+	bottom:1em;
+	right:1em;
+}
+
+.icon{
+	height: 24px;
+	width: 24px;
+	margin:0 auto;
+	opacity: 0.2;
+	margin-bottom: 10px;
+}
+
+
+.icon:hover{
+	opacity:1;
+	cursor: pointer;
+}
+
+
+/* 	---------
+	Events
+	--------- */
+.day-mode {
+	color:black;
+	background-color: white;
+	transition: background-color 1s, color 1s;
+}
+
+.night-mode{
+	color:white;
+	background-color: #151515;
+	transition: background-color 1s, color 1s;
+}
+
+.night-icon-black{
+	background-image: url('icons/night-icon-black.png');
+	transition: background-image 1s;
+}
+
+.night-icon-white{
+	background-image: url('icons/night-icon-white.png');
+	transition: background-image 1s;
+}
+
+.fullscreen-icon-black{
+	background-image: url('icons/fullscreen-icon-black.png');
+}
+
+.fullscreen-icon-white{
+	background-image: url('icons/fullscreen-icon-white.png');
+}
+
+.github-icon-black{
+	background-image: url('icons/github-black.png')
+}
+
+.github-icon-white{
+	background-image: url('icons/github-white.png')
+}
