@@ -61,7 +61,7 @@
 		$('article').css('font-size', localStorage.getItem('fontSize') || 26);
 	}
 
-/*	window.setInterval(function(){
+	window.setInterval(function(){
 
 		newTitle = $('header').html();
 		newBody = $('article').html();
@@ -79,7 +79,7 @@
 			oldBody = newBody;
 		}
 
-	}, timer);*/
+	}, timer);
 
 /* 	----------
 	Functions	
