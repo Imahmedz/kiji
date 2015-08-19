@@ -10,6 +10,7 @@ div.note {
 	padding-top: 15px;
 	width:45%;
 	margin:0 auto;
+	min-width: 300px;
 }
 
 header{
@@ -37,20 +38,31 @@ article {
 	width: 50px;
 }
 
+#fontmenu{
+	position: fixed;
+	top:84px;
+	right: 3em;
+	height: 24px;
+	width: 60px;
+	float: left;
+}
+
 #github{
 	position: fixed;
 	bottom:1em;
 	right:1em;
 }
 
+.icon-menu{
+	margin:0 auto;
+}
+
 .icon{
 	height: 24px;
 	width: 24px;
-	margin:0 auto;
 	opacity: 0.2;
 	margin-bottom: 10px;
 }
-
 
 .icon:hover{
 	opacity:1;
@@ -73,28 +85,11 @@ article {
 	transition: background-color 1s, color 1s;
 }
 
-.night-icon-black{
-	background-image: url('icons/night-icon-black.png');
-	transition: background-image 1s;
+.font-icon{
+	float:left;
 }
 
-.night-icon-white{
-	background-image: url('icons/night-icon-white.png');
-	transition: background-image 1s;
-}
-
-.fullscreen-icon-black{
-	background-image: url('icons/fullscreen-icon-black.png');
-}
-
-.fullscreen-icon-white{
-	background-image: url('icons/fullscreen-icon-white.png');
-}
-
-.github-icon-black{
-	background-image: url('icons/github-black.png')
-}
-
-.github-icon-white{
-	background-image: url('icons/github-white.png')
+.invert{
+	filter: invert(100%);
+	-webkit-filter:invert(100%);
 }
