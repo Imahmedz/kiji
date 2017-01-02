@@ -7,6 +7,10 @@ body{
 	margin: 0;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 div.note {
 	padding-top: 15px;
 	width:45%;
@@ -15,12 +19,16 @@ div.note {
 }
 
 header{
-	margin-bottom: 15px;
 	font-size: 3.1em;
+	margin-bottom: -20px;
 }
 
 article {
 	font-size: 26px;
+}
+
+article:first-child {
+	margin-top: 0px;
 }
 
 *:focus {
@@ -97,9 +105,9 @@ article {
 }
 
 .show {
-	display: contents;
+	visibility: visible;
 }
 
 .hide {
-	display: none;
+	visibility: hidden;
 }

@@ -50,7 +50,9 @@
 	// Font Menu
 	attachEventToNode(getElement('#fontsize'), 'click', function(){
 		toggleClass(getElement('#minus'), "show")
+		toggleClass(getElement('#minus'), "hide")
 		toggleClass(getElement('#plus'), "show")
+		toggleClass(getElement('#plus'), "hide")
 	})
 
 	attachEventToNode(getElement('#minus'), 'click', function(){
