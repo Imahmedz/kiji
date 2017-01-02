@@ -95,3 +95,11 @@ article {
 	filter: invert(100%);
 	-webkit-filter:invert(100%);
 }
+
+.show {
+	display: contents;
+}
+
+.hide {
+	display: none;
+}

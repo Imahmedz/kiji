@@ -4,44 +4,81 @@
 	DOM Events	
 	---------- */
 
+	function getElement(query) {
+		return document.querySelector(query)
+	}
+
+	function getAllElements(query) {
+		return document.querySelectorAll(query)
+	}
+
+	function attachEventToNode(node, eventName, callback) {
+		node.addEventListener(eventName, callback)
+	}
+
+	function toggleClass(node, className) {
+		node.classList.toggle(className)
+	}
+
+	function changeElementText(node, text) {
+		node.innerText = text
+	}
+
+	function changeElementHTML(node, html) {
+		node.innerHTML = html
+	}
+
+	function getElementText(node) {
+		return node.innerText
+	}
+
+	function getElementHTML(node) {
+		return node.innerHTML
+	}
+
+	function changeCSSValue(node, property, value) {
+		node.style[property] = value
+	}
+
+	function getCSSValue(node, property) {
+		return window.getComputedStyle(node)[property]
+	}
+
 	// Night-Mode
-	$('#night').on('click',function(){
-		activateNightMode();
-	});
+	attachEventToNode(getElement('#night'), 'click', activateNightMode)
 
 	// Font Menu
-	$('.font-icon').hide();
-	
-	$('#fontsize').on('click', function(){
-		$('#minus').toggle("slow");
-		$('#plus').toggle("slow");
-		pagex = event.pageX;
-		$(document).mousemove(function(e){
-			if( Math.abs(e.pageX - pagex) > 200){
-				// User is probably leaving the box
-				$('#plus').hide(500);
-				$('#minus').hide(500);
-			}
-  		});
+	attachEventToNode(getElement('#fontsize'), 'click', function(){
+		toggleClass(getElement('#minus'), "show")
+		toggleClass(getElement('#plus'), "show")
+	})
+
+	attachEventToNode(getElement('#minus'), 'click', function(){
+		var article = getElement('article')
+		var currCssValue = getCSSValue(article, 'font-size')
+		var newValue = (parseInt(currCssValue) - 1) + "px"
+		changeCSSValue(article, 'font-size', newValue)
+
+		localStorage.setItem('fontSize', newValue);
 	});
 
-	$('#minus').on('click', function(){
-		$('article').css('font-size', parseInt($('article').css('font-size'))-1);
-		localStorage.setItem('fontSize', $('article').css('font-size'));
+	attachEventToNode(getElement('#plus'), 'click', function(){
+		var article = getElement('article')
+		var currCssValue = getCSSValue(article, 'font-size')
+		var newValue = (parseInt(currCssValue) + 1) + "px"
+		changeCSSValue(article, 'font-size', newValue)
+
+		localStorage.setItem('fontSize', newValue);
 	});
 
-	$('#plus').on('click', function(){
-		$('article').css('font-size', parseInt($('article').css('font-size'))+1);
-		localStorage.setItem('fontSize', $('article').css('font-size'));
-	});
-/* 	----------
+	/* 	----------
 	Auto-Saving	
 	---------- */
 
 	var newTitle, // Used for getting the title from the page
 		newBody, // Used for getting the body of the article
-		oldTitle=null, // Used to keep track of the old title
-		oldBody=null; // Used to keep track of the old article body
+		oldTitle = null, // Used to keep track of the old title
+		oldBody = null; // Used to keep track of the old article body
 
 	var timer = 5000; // Timer for auto-saving in millisec
 
@@ -49,18 +86,16 @@
 	Loading from localStorage (if any)	
 	---------- */
 
-	if( localStorage.getItem('notetitle') !== null)
+	if(localStorage.getItem('notetitle') !== null)
 	{
-		$('header').text(localStorage.getItem('notetitle'));
-		$('article').html(localStorage.getItem('notebody'));
-		$('article').css('font-size', localStorage.getItem('fontSize') || 26);
+		changeElementText(getElement('header'), localStorage.getItem('notetitle'))
+		changeElementHTML(getElement('article'), localStorage.getItem('notebody'))
+		changeCSSValue(getElement('article'), 'font-size', localStorage.getItem('fontSize') || 26)
 	}
 
 	window.setInterval(function(){
-
-		newTitle = $('header').html();
-		newBody = $('article').html();
-
+		newTitle = getElementText(getElement('header'))
+		newBody = getElementHTML(getElement('article'))
 		// Save only if the title and/or the body is edited
 		if(newTitle != oldTitle)
 		{
@@ -81,10 +116,10 @@
 	---------- */
 
 	function activateNightMode(){
-		$('body').toggleClass('night-mode');
-		$('.icon').each(function(){
-			$(this).toggleClass('invert');
-		});
+		toggleClass(getElement('body'), 'night-mode')
+		var icons = getAllElements('.icon')
+		for (var i = icons.length - 1; i >= 0; i--) {
+			toggleClass(icons[i], "invert")
+		}
 	};
-
 })();
