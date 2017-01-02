@@ -13,8 +13,8 @@ body{
 
 div.note {
 	padding-top: 15px;
-	width:45%;
-	margin:0 auto;
+	width: 45%;
+	margin: 0 auto;
 	min-width: 300px;
 }
 
@@ -49,7 +49,7 @@ article:first-child {
 
 #fontmenu{
 	position: fixed;
-	top:84px;
+	top: 51px;
 	right: 3em;
 	height: 24px;
 	width: 60px;
@@ -58,8 +58,8 @@ article:first-child {
 
 #github{
 	position: fixed;
-	bottom:1em;
-	right:1em;
+	bottom: 1em;
+	right: 1em;
 }
 
 .icon-menu{
@@ -75,7 +75,7 @@ article:first-child {
 }
 
 .icon:hover{
-	opacity:1;
+	opacity: 1;
 	cursor: pointer;
 }
 
@@ -84,24 +84,24 @@ article:first-child {
 	Events
 	--------- */
 .day-mode {
-	color:black;
+	color: black;
 	background-color: white;
 	transition: background-color 1s, color 1s;
 }
 
 .night-mode{
-	color:white;
+	color: white;
 	background-color: #151515;
 	transition: background-color 1s, color 1s;
 }
 
 .font-icon{
-	float:left;
+	float: left;
 }
 
 .invert{
 	filter: invert(100%);
-	-webkit-filter:invert(100%);
+	-webkit-filter: invert(100%);
 }
 
 .show {
