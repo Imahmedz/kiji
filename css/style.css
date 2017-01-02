@@ -3,7 +3,8 @@
 	--------- */
 
 body{
-	font-family: 'Open Sans Condensed', sans-serif,helvetica ;
+	font-family: 'Open Sans Condensed', sans-serif, Helvetica;
+	margin: 0;
 }
 
 div.note {
