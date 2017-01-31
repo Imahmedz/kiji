@@ -1,10 +1,10 @@
 Kiji
 ==
-Kiji is a minimalist writing tool, built with HTML,CSS and Javascript. [Live app](http://elazzabi.github.io/kiji/)
+Kiji (Writing in Japanese) is a minimalist, distraction-free editor.
 
-## Change log
-0.0.2 - Pushed 13/08/2015
-> Font size +/-
+![Kiji interface](interface.png "Kiji interface")
 
-0.0.1 - Pushed 13/08/2015
-> Initial version.
+I use this tool to write articles or taughts. You can write, close the window and go. Your text will be waiting for you when you comeback.
+
+## Status
+[DONE] This project is done and there is no intention to add new features to it. Please feel free to make a pull request if you want something new.
